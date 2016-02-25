@@ -7,6 +7,8 @@ import {
 import {MATERIAL_DIRECTIVES} from 'ng2-material/all';
 
 import {HomeCmp} from '../home/home';
+import {AvisosPrevCmp} from '../avisos-preventivos1-3/AvisosPrev';
+import {CertificatesCmp} from '../Certificados/Certificados';
 
 @Component({
   selector: 'app',
@@ -17,6 +19,8 @@ import {HomeCmp} from '../home/home';
   directives: [ROUTER_DIRECTIVES, MATERIAL_DIRECTIVES]
 })
 @RouteConfig([
-  { path: '/home', component: HomeCmp, as: 'Home' }
+  { path: '/home', component: HomeCmp, as: 'Home' },
+  { path: '/AvisosPrev', component: AvisosPrevCmp, as: 'AvisosPrev' },
+  { path: '/Certificados', component: CertificatesCmp, as: 'Certificados' }
 ])
 export class AppCmp {}

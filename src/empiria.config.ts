@@ -75,6 +75,12 @@ const DATA_OPERATIONS: DataOperationDef[] = [
   "crossDomain": true,
   "method": "GET"
   },
+   { "uid" : "requestPendingNoteRecording",
+  "url": "v1/transactions/request-pending-note-recording",
+  "async": false,
+  "crossDomain": true,
+  "method": "POST"
+  },
   { "uid" : "requestCertificate",
   "url": "v1/transactions/request-certificate",
   "async": false,
