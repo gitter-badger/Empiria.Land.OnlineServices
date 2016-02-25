@@ -9,7 +9,7 @@ export const DEBUG                = argv['debug']       || false;
 export const PORT                 = argv['port']        || 5555;
 export const LIVE_RELOAD_PORT     = argv['reload-port'] || 4002;
 export const DOCS_PORT            = argv['docs-port']   || 4003;
-export const APP_BASE             = argv['base']        || '/';
+export const APP_BASE             = argv['base']        || '/online.services';
 
 export const APP_TITLE            = 'Servicios en línea: Registro Público de la Propiedad';
 

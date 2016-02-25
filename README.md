@@ -11,11 +11,19 @@ This project is based on Angular 2.0 and TypeScript 1.7.
 
 **Note** this project requires node v4.x.x or higher and npm 2.14.7.
 
+You must have `ts-node` installed as global. If you don't, use:
+
 ```bash
+npm install -g ts-node
+```
+
+In order to start use:
+```bash
+
 git clone https://github.com/Ontica/Empiria.Land.OnlineServices
 cd Empiria.Land.OnlineServices
-npm run install       # or `npm run reinstall` if you get an error
-npm run start         # start with --env dev
+npm install       # or `npm run reinstall` if you get an error
+npm start         # start with --env dev
 ```
 
 # Configuration

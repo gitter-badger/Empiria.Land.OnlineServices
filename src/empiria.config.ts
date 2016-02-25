@@ -9,7 +9,8 @@
 import {SettingsData} from "empiria/settings";
 import {DataOperationDef} from "empiria/data.operation";
 
-const TESTS_SERVER = "http://187.157.152.5/testing.webapi/";
+const TESTS_SERVER = "http://empiria.land/web.api/";
+                  // "http://empiria.land-api.test/testing.webapi/
 
 const TESTS_API_KEY = "kSVewfgU5WGgz3mSSM2YSQAUwa3W67MhgfR7qBtWmFWcZ89hTPWnNuPnGHgGA6YG";
 
@@ -76,6 +77,12 @@ const DATA_OPERATIONS: DataOperationDef[] = [
   },
   { "uid" : "requestCertificate",
   "url": "v1/transactions/request-certificate",
+  "async": false,
+  "crossDomain": true,
+  "method": "POST"
+  },
+  { "uid" : "requestPendingNoteRecording",
+  "url": "v1/transactions/request-pending-note-recording",
   "async": false,
   "crossDomain": true,
   "method": "POST"
