@@ -9,7 +9,7 @@ export const DEBUG                = argv['debug']       || false;
 export const PORT                 = argv['port']        || 5555;
 export const LIVE_RELOAD_PORT     = argv['reload-port'] || 4002;
 export const DOCS_PORT            = argv['docs-port']   || 4003;
-export const APP_BASE             = argv['base']        || '/online.services';
+export const APP_BASE             = argv['base']        || '/online.services/';
 
 export const APP_TITLE            = 'Servicios en línea: Registro Público de la Propiedad';
 
@@ -57,11 +57,7 @@ export const NPM_DEPENDENCIES = [
   { src: 'ng2-material/dist/MaterialIcons-Regular.ijmap', inject: false, dest: CSS_DEST },
 
   // Used temporarly by Empiria TS Framework
-  { src: 'jquery/dist/jquery.min.js', inject: 'libs', dest: LIB_DEST },
-  { src: 'jquery/dist/kendo.all.min.js', inject: 'libs', dest: LIB_DEST },
-  { src: 'jquery/dist/angular.min.js', inject: 'libs', dest: LIB_DEST },
-  { src: 'jquery/dist/jszip.min.js', inject: 'libs', dest: LIB_DEST },
-  { src: 'jquery/dist/console.js', inject: 'libs', dest: LIB_DEST },
+  { src: 'jquery/dist/jquery.min.js', inject: 'libs', dest: LIB_DEST }
 
 ];
 
@@ -71,10 +67,7 @@ export const APP_ASSETS = [
   { src: `${ASSETS_SRC}/kendo.default.min.css`, inject: true, dest: CSS_DEST },
   { src: `${ASSETS_SRC}/kendo.common.min.css`, inject: true, dest: CSS_DEST },
   { src: `${ASSETS_SRC}/kendo.rtl.min.css`, inject: true, dest: CSS_DEST },
-  { src: `${ASSETS_SRC}/kendo.dataviz.min.css`, inject: true, dest: CSS_DEST },
-  { src: `${ASSETS_SRC}/font-awesome.css`, inject: true, dest: CSS_DEST },
   { src: `${ASSETS_SRC}/font-awesome.min.css`, inject: true, dest: CSS_DEST },
-  { src: `${ASSETS_SRC}/kendo.dataviz.default.min.css`, inject: true, dest: CSS_DEST }
 ];
 
 NPM_DEPENDENCIES
