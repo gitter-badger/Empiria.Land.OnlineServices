@@ -1,0 +1,59 @@
+<h1 class="md-headline">Solicitud de Certificados en Línea</h1>
+<md-divider></md-divider>
+
+<form>
+ <div layout-gt-xs="row">
+  <md-input-container class="md-block" flex="50">
+      <label><b>¿Qué tipo de certificado solicita? </b></label>
+  </md-input-container>
+  <md-input-container class="md-block" flex="50" >
+      <select [(ngModel)]="certificateType">
+          <option value="">(Tipo de Certificado)</option>
+          <option value="1">Propiedad </option>
+          <option value="2">Inscripción </option>
+          <option value="4">Libertad de gravamen / Gravamen </option>
+       </select>
+  </md-input-container>
+  </div>
+  <div layout-gt-xs="row" >
+      <md-input-container class="md-block" flex="50">
+          <label>Nombre completo del solicitante:</label>
+      </md-input-container>
+      <md-input-container class="md-block" flex="50">
+          <input md-input [(ngModel)]="requestedBy" placeholder="Nombre Completo">
+      </md-input-container>
+  </div>
+  <div layout-gt-xs="row" >
+      <md-input-container class="md-block" flex="50">
+          <label>Folio real del predio:          </label>
+      </md-input-container>
+      <md-input-container class="md-block" flex="50">
+          <input md-input [(ngModel)]="propertyUID" placeholder="Folio real">
+      </md-input-container>
+        <md-input-container class="md-block" md-gutter="1px" >
+			<button md-raised-button class="md-raised md-primary" (click)="searchProperty();">Buscar<i md-icon>search</i></button>
+	   </md-input-container>
+  </div>
+  <div layout-gt-xs="row" >
+      <md-input-container class="md-block" flex="50">
+           <button md-button md-no-ink class="md-primary">¿Qué es el folio real?</button>
+      </md-input-container>
+  </div>
+  <div layout-gt-xs="row">
+       <md-input-container >
+         <button md-button md-no-ink class="md-primary">si su predio aún no tiene asignado un folio real, solicitelo aquí sin costo</button>
+       </md-input-container>
+  </div>
+    <div layout-gt-xs="row" >
+	  <md-input-container class="md-block" flex-gt-sm>
+	  </md-input-container>
+	   <md-input-container class="md-block" flex-gt-sm>
+	  </md-input-container>
+	  <md-input-container layout="row">
+		<button md-raised-button class="md-raised md-primary" (click)="requestCerficate();">Siguiente (Pago)</button>
+	  </md-input-container>
+	</div>
+ </form>
+
+
+

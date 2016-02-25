@@ -58,12 +58,23 @@ export const NPM_DEPENDENCIES = [
 
   // Used temporarly by Empiria TS Framework
   { src: 'jquery/dist/jquery.min.js', inject: 'libs', dest: LIB_DEST },
+  { src: 'jquery/dist/kendo.all.min.js', inject: 'libs', dest: LIB_DEST },
+  { src: 'jquery/dist/angular.min.js', inject: 'libs', dest: LIB_DEST },
+  { src: 'jquery/dist/jszip.min.js', inject: 'libs', dest: LIB_DEST },
+  { src: 'jquery/dist/console.js', inject: 'libs', dest: LIB_DEST },
 
 ];
 
 // Declare local files that needs to be injected
 export const APP_ASSETS = [
-  { src: `${ASSETS_SRC}/main.css`, inject: true, dest: CSS_DEST }
+  { src: `${ASSETS_SRC}/main.css`, inject: true, dest: CSS_DEST },
+  { src: `${ASSETS_SRC}/kendo.default.min.css`, inject: true, dest: CSS_DEST },
+  { src: `${ASSETS_SRC}/kendo.common.min.css`, inject: true, dest: CSS_DEST },
+  { src: `${ASSETS_SRC}/kendo.rtl.min.css`, inject: true, dest: CSS_DEST },
+  { src: `${ASSETS_SRC}/kendo.dataviz.min.css`, inject: true, dest: CSS_DEST },
+  { src: `${ASSETS_SRC}/font-awesome.css`, inject: true, dest: CSS_DEST },
+  { src: `${ASSETS_SRC}/font-awesome.min.css`, inject: true, dest: CSS_DEST },
+  { src: `${ASSETS_SRC}/kendo.dataviz.default.min.css`, inject: true, dest: CSS_DEST }
 ];
 
 NPM_DEPENDENCIES
