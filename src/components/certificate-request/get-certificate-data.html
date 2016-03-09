@@ -1,59 +1,57 @@
-<h1 class="md-headline">Solicitud de Certificados en Línea</h1>
-<md-divider></md-divider>
+<h1 class="row">Solicitud de Certificados en Línea</h1>        
+<div class="row">    
+    <div class="columns medium-9">
+        <form>
+            <div class="row">
+                <div class="small-5 columns">
+                    <label for="generalRequest.certificateType" class="middle">¿Qué tipo de certificado solicita?</label>
+                </div>
+                <div class="small-7 columns">
+                    <select [(ngModel)]="generalRequest.certificateType" class="k-dropdownlist">
+                        <option value="">(Tipo de Certificado)</option>
+                        <option value="1">Propiedad</option>
+                        <option value="2">Inscripción</option>
+                        <option value="4">Libertad de gravamen / Gravamen</option>                    
+                    </select>   
+                </div>
+            </div>
+            <div class="row">                
+                <div class="small-5 columns">
+                    <label for="generalRequest.requestedBy" class="middle">Nombre completo del solicitante:</label>
+                </div>
+                <div class="small-7 columns">
+                    <input type="text" value=""  [(ngModel)]="generalRequest.requestedBy" placeholder="Nombre Completo">  
+                </div>
+            </div>
+            <div class="row">                
+                <div class="small-5 columns">
+                    <label for="" class="middle">Folio real del predio:</label>
+                </div>
+                <div class="small-5 columns">
+                    <input type="text" value="" [(ngModel)]="generalRequest.propertyUID" placeholder="Folio real">                        
+                </div>
+                <div class="small-2 columns">                     
+                    <a class="medium success button" (click)="searchProperty()"> Buscar</a><br/>  
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-9 columns">
+                    <p><a href="http://www.ontica.org/land/">¿Qué es el folio real?</a></p>      
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-9 columns">
+                     <p><a href="http://www.ontica.org/land/">si su predio aún no tiene asignado un folio real, solicitelo aquí sin costo</a></p>      
+                </div>
+            </div>
+            <div>
+                <div class="small-12 columns">                    
+                    <a class="medium success button float-right" (click)="requestCerficate();">Siguiente (Pago)</a> 
+                    
+                </div>
+            </div>
+        </form>        
+    </div>
+</div>
+<message-box></message-box>
 
-<form>
- <div layout-gt-xs="row">
-    <md-input-container class="md-block" flex="50">
-      <label><b>¿Qué tipo de certificado solicita? </b></label>
-    </md-input-container>
-    <md-input-container class="md-block" flex="50" >
-      <select [(ngModel)]="certificateType">
-        <option value="">(Tipo de Certificado)</option>
-        <option value="1">Propiedad</option>
-        <option value="2">Inscripción</option>
-        <option value="4">Libertad de gravamen / Gravamen</option>
-      </select>
-    </md-input-container>
-  </div>
-
-  <div layout-gt-xs="row" >
-    <md-input-container class="md-block" flex="50">
-        <label>Nombre completo del solicitante:</label>
-    </md-input-container>
-    <md-input-container class="md-block" flex="50">
-        <input md-input [(ngModel)]="requestedBy" placeholder="Nombre Completo">
-    </md-input-container>
-  </div>
-  <div layout-gt-xs="row" >
-    <md-input-container class="md-block" flex="50">
-        <label>Folio real del predio:</label>
-    </md-input-container>
-    <md-input-container class="md-block" flex="50">
-        <input md-input [(ngModel)]="propertyUID" placeholder="Folio real">
-    </md-input-container>
-    <md-input-container class="md-block" md-gutter="1px" >
-        <button md-raised-button class="md-raised md-primary" (click)="searchProperty();">Buscar<i md-icon>search</i></button>
-    </md-input-container>
-  </div>
-  <div layout-gt-xs="row" >
-    <md-input-container class="md-block" flex="50">
-        <button md-button md-no-ink class="md-primary">¿Qué es el folio real?</button>
-    </md-input-container>
-  </div>
-  <div layout-gt-xs="row">
-    <md-input-container >
-        <button md-button md-no-ink class="md-primary">si su predio aún no tiene asignado un folio real, solicitelo aquí sin costo</button>
-    </md-input-container>
-  </div>
-  <div layout-gt-xs="row" >
-      <md-input-container class="md-block" flex-gt-sm>
-
-      </md-input-container>
-      <md-input-container class="md-block" flex-gt-sm>
-
-      </md-input-container>
-      <md-input-container layout="row">
-          <button md-raised-button class="md-raised md-primary" (click)="requestCerficate();">Siguiente (Pago)</button>
-      </md-input-container>
-	</div>
-</form>

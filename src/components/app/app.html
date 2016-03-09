@@ -1,15 +1,33 @@
-<section class="material-app-content">
-  <md-toolbar class="md-whiteframe-z1">
-    <nav class="md-toolbar-tools">
-      <button md-button alt="Home" class="md-icon-button"><i class="" md-icon>menu</i></button>
-      <h1 flex>Servicios en línea</h1>
-      <button md-button>Página de inicio</button>
-      <button md-button>Registrarse</button>
-      <button md-button>Iniciar sesión</button>
-	    <button md-button [routerLink]="['/PendingNoteRequest']">Avisos Preventivos</button>
-      <button md-button [routerLink]="['/CertificateRequest']">Certificados</button>
-    </nav>
-  </md-toolbar>
+<section class="">
+  
+    <div class="row">
+		<div class="two columns">
+		  <button md-button alt="Home" class="md-icon-button"><i class="" md-icon>menu</i></button>
+		</div>
+		<div class="ten columns">
+		  <h1 flex>Servicios en línea</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="two columns"> 
+			<button md-button>Página de inicio</button>
+		</div>
+		<div class="two columns">
+			<button md-button>Registrarse</button>
+		</div>
+		<div class="two columns">
+			<button md-button>Iniciar sesión</button>
+		</div>
+		<div class="two columns">
+			<button md-button [routerLink]="['/PendingNoteRequest']">Avisos Preventivos</button>
+		</div>
+		<div class="two columns">
+			<button md-button [routerLink]="['/CertificateRequest']">Certificados</button>
+		</div>
+		<div class="two columns"> 
+			<button md-button>Otro</button>
+		</div>
+    </div>
 
   <md-content layout="column" layout-align="center center">
     <router-outlet></router-outlet>
