@@ -47,14 +47,6 @@ export const NPM_DEPENDENCIES = [
   { src: 'angular2/bundles/router.js', inject: 'libs', dest: LIB_DEST }, // use router.min.js with alpha47
   { src: 'angular2/bundles/http.min.js', inject: 'libs', dest: LIB_DEST },
 
-  { src: 'ng2-material/dist/ng2-material.css', inject: true, dest: CSS_DEST },
-  { src: 'ng2-material/dist/font.css', inject: true, dest: CSS_DEST },
-
-  { src: 'ng2-material/dist/MaterialIcons-Regular.eot', inject: false, dest: CSS_DEST },
-  { src: 'ng2-material/dist/MaterialIcons-Regular.ttf', inject: false, dest: CSS_DEST },
-  { src: 'ng2-material/dist/MaterialIcons-Regular.woff', inject: false, dest: CSS_DEST },
-  { src: 'ng2-material/dist/MaterialIcons-Regular.woff2', inject: false, dest: CSS_DEST },
-  { src: 'ng2-material/dist/MaterialIcons-Regular.ijmap', inject: false, dest: CSS_DEST },
 
   // Used temporarly by Empiria TS Framework
   { src: 'jquery/dist/jquery.min.js', inject: 'libs', dest: LIB_DEST }
@@ -64,10 +56,7 @@ export const NPM_DEPENDENCIES = [
 // Declare local files that needs to be injected
 export const APP_ASSETS = [
   { src: `${ASSETS_SRC}/main.css`, inject: true, dest: CSS_DEST },
-  { src: `${ASSETS_SRC}/kendo.default.min.css`, inject: true, dest: CSS_DEST },
-  { src: `${ASSETS_SRC}/kendo.common.min.css`, inject: true, dest: CSS_DEST },
-  { src: `${ASSETS_SRC}/kendo.rtl.min.css`, inject: true, dest: CSS_DEST },
-  { src: `${ASSETS_SRC}/font-awesome.min.css`, inject: true, dest: CSS_DEST },
+  { src: `${ASSETS_SRC}/foundation.css`, inject: true, dest: CSS_DEST },
 ];
 
 NPM_DEPENDENCIES
@@ -101,7 +90,6 @@ export const SYSTEM_CONFIG_BUILDER = {
   paths: {
     '*': `${TMP_DIR}/*`,
     'angular2/*': 'node_modules/angular2/*',
-    'ng2-material/*': 'node_modules/ng2-material/*',
     'rxjs/*': 'node_modules/rxjs/*',
     'empiria/*': 'node_modules/empiria/*',
     'empiria-land/*': 'node_modules/empiria-land/*'
