@@ -4,10 +4,10 @@
 		<form>
 			<div class="row">
 				<div class="small-3 columns">
-					<label for="selectedItemsActTypeModel" class="middle">Operación Proyectada</label>
+					<label for="pendingNoteRequest.projectedActId" class="middle">Operación Proyectada</label>
 				</div>
 				<div class="small-9 columns">
-					<select  [(ngModel)] ="selectedItemsActTypeModel" class="" (init)="selectedItemsActTypeModel[0]">
+					<select  [(ngModel)] ="pendingNoteRequest.projectedActId" class="" (init)="projectedActId[0]">
 					  <option value="">Elije una opción</option>
 					  <option value="2203">Compraventa</option>
 					  <option value="2209">Donación de derechos de posesión</option>
@@ -23,26 +23,26 @@
 			</div>
 			<div class="row">
 				<div class="small-3 columns">
-					<label for="requestedByModel" class="middle">Otorgado por</label>
+					<label for="pendingNoteRequest.requestedBy" class="middle">Otorgado por</label>
 				</div>
 				<div class="small-9 columns">
-					<input type="text"  value=""  [(ngModel)]="requestedByModel" placeholder="Otorgado por:"/>
+					<input type="text"  value=""  [(ngModel)]="pendingNoteRequest.requestedBy" placeholder="Otorgado por:"/>
 				</div>
 			</div>
 			<div class="row">
 				<div class="small-3 columns">
-					<label for="projectedOwnerModel" class="middle">A favor de:</label>
+					<label for="pendingNoteRequest.projectedOwner" class="middle">A favor de:</label>
 				</div>
 				<div class="small-9 columns">
-					<input type="text"  value="" [(ngModel)]="projectedOwnerModel" placeholder="A favor de:"/>
+					<input type="text"  value="" [(ngModel)]="pendingNoteRequest.projectedOwner" placeholder="A favor de:"/>
 				</div>
 			</div>
 			<div class="row">
 				<div class="small-3 columns">
-					<label for="realPropertyUIDModel" class="middle">Folio real del predio:</label>
+					<label for="pendingNoteRequest.realPropertyUID" class="middle">Folio real del predio:</label>
 				</div>
 				<div class="small-7 columns">
-					<input type="text" value=""  [(ngModel)]="realPropertyUIDModel" placeholder="Folio real"/>
+					<input type="text" value=""  [(ngModel)]="pendingNoteRequest.realPropertyUID" placeholder="Folio real"/>
 				</div>
 				<div class="small-2 columns">
 					<a class="medium success button" (click)="searchProperty()"> Buscar</a><br/>  
