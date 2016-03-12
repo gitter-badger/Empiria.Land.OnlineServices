@@ -15,7 +15,7 @@ import {ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2
 import {AppCmp} from './components/app/app';
 
 bootstrap(AppCmp, [
-  ROUTER_PROVIDERS, 
+  ROUTER_PROVIDERS,
   provide(LocationStrategy, { useClass: HashLocationStrategy })
 ]);
 
