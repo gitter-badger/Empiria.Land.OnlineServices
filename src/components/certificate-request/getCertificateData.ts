@@ -40,14 +40,14 @@ export class GetCertificateDataCmp {
     }
 
     private showOnlineTransactionMessage(onlineTransaction: OnlineTransaction): void {
-        let transationRequest = "Número de Transacción: " + onlineTransaction.externalTransactionNo + "\n" +
+        let transactionRequest = "Número de Transacción: " + onlineTransaction.externalTransactionNo + "\n" +
                                  "Fecha de presentación: " + onlineTransaction.presentationTime + "\n" +
                                  "Folio real:            " + onlineTransaction.realPropertyUID + "\n" +
                                  "Solicitado por:        " + onlineTransaction.requestedBy + "\n" +
                                  "Status atcual:         " + onlineTransaction.status + "\n" +
                                  "Uid:                   " + onlineTransaction.uid;
         this.messageBox.showMessage("La solicitud de certificado se creó satistactoriamente. \n" +
-                                     transationRequest);
+                                     transactionRequest);
     }
 
     private validateProperty(propertyUID: string): boolean {
