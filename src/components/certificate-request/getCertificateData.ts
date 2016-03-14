@@ -1,6 +1,7 @@
 import {Component, ViewChild} from 'angular2/core';
 import {OnlineServices, CertificateRequest, OnlineTransaction} from 'empiria-land/online.services';
 import {MessageBox} from '../windows/message-box';
+import {Validate} from '../validate/generalValidate';
 
 @Component({
   selector: 'get-certificate-data',
@@ -9,19 +10,17 @@ import {MessageBox} from '../windows/message-box';
 })
 
 export class GetCertificateDataCmp {
-    public generalRequest: {propertyUID: string,
-                                     requestedBy: string,
-                                     certificateType: string} = {propertyUID: "",
-                                     requestedBy: "",
-                                     certificateType: ""};
+
+    public certificateRequest: CertificateRequest = this.getNewCertificateRequest();
     @ViewChild(MessageBox) public messageBox: MessageBox;
 
     public searchProperty(): void {
         try {
-            if (!this.isValidProperty(this.generalRequest.propertyUID)) {
+            if (!this.validateProperty(this.certificateRequest.realPropertyUID)) {
                 return;
             }
-            this.messageBox.showMessage(OnlineServices.getPropertyAsHtml(this.generalRequest.propertyUID));
+            let propertyHtml = OnlineServices.getPropertyAsHtml(this.certificateRequest.realPropertyUID);
+            this.messageBox.showMessage(propertyHtml);
            return;
         } catch (e) {
             this.messageBox.showException(e);
@@ -33,29 +32,11 @@ export class GetCertificateDataCmp {
             if (!this.validateCertificateRequest() ) {
                 return;
             }
-            let certificateRequest = this.getCertificateRequest();
-            let onlineTransaction = this.getOnlineTransaction(certificateRequest);
+            let onlineTransaction = OnlineServices.requestCertificate(this.certificateRequest);
             this.showOnlineTransactionMessage(onlineTransaction);
         } catch (e) {
             this.messageBox.showException(e);
         }
-    }
-
-    private getCertificateRequest(): CertificateRequest {
-        let certificateRequest: CertificateRequest = {
-                certificateType : parseInt (this.generalRequest.certificateType, 10),
-                realPropertyUID :  this.generalRequest.propertyUID,
-                externalTransactionNo: (Math.random() * 1000000).toFixed(0),
-                externalTransactionTime : new Date('2016-01-01'),
-                paymentAmount : 160,
-                paymentReceiptNo : '4309B',
-                requestedBy :  this.generalRequest.requestedBy
-            };
-        return certificateRequest;
-    }
-
-    private getOnlineTransaction(certificateRequest: CertificateRequest): OnlineTransaction {
-        return OnlineServices.requestCertificate(certificateRequest);
     }
 
     private showOnlineTransactionMessage(onlineTransaction: OnlineTransaction): void {
@@ -69,40 +50,46 @@ export class GetCertificateDataCmp {
                                      transationRequest);
     }
 
+    private validateProperty(propertyUID: string): boolean {
+        if (!Validate.hasValue(propertyUID)) {
+            this.messageBox.showMessage('Requiero se proporcione el folio real del predio.');
+            return false;
+        }
+        if (!OnlineServices.existsProperty(propertyUID)) {
+            this.messageBox.showMessage("No encontró ningún predio registrado con el folio real "  +
+                            propertyUID + ".");
+            return false;
+        }
+        return true;
+    }
+
     private validateCertificateRequest(): boolean {
-        if (!this.hasValue(this.generalRequest.certificateType)) {
+        if (!Validate.hasValue(this.certificateRequest.certificateType.toString())) {
             this.messageBox.showMessage("Requiero se seleccione de la lista el tipo " +
                                         "de certificado que se solicita.");
             return false;
         }
-        if (!this.hasValue(this.generalRequest.requestedBy)) {
+        if (!Validate.hasValue(this.certificateRequest.requestedBy)) {
             this.messageBox.showMessage("Necesito conocer el nombre del solicitante.");
             return false;
         }
-        if (!this.isValidProperty(this.generalRequest.propertyUID)) {
+        if (!this.validateProperty(this.certificateRequest.realPropertyUID)) {
             return false;
         }
         return true;
     }
 
-    private hasValue(value: string): boolean {
-        if ((value === null) || (value === undefined) || (value.length === 0)) {
-            return false;
-        }
-        return true;
-    }
-
-    private isValidProperty(propertyUID: string): boolean {
-        if (!this.hasValue(propertyUID)) {
-            this.messageBox.showMessage('Requiero se proporcione el folio real del predio.');
-            return false;
-        }
-        if (!OnlineServices.existsProperty(this.generalRequest.propertyUID)) {
-            this.messageBox.showMessage("No encontré ningún predio registrado con el folio real "  +
-                            this.generalRequest.propertyUID + ".");
-            return false;
-        }
-        return true;
+    private getNewCertificateRequest(): CertificateRequest {
+        let certificateRequest: CertificateRequest = {
+                certificateType : 0,
+                realPropertyUID :  '',
+                externalTransactionNo: (Math.random() * 1000000).toFixed(0),
+                externalTransactionTime : new Date('2016-01-01'),
+                paymentAmount : 160,
+                paymentReceiptNo : '4309B',
+                requestedBy :  ''
+            };
+        return certificateRequest;
     }
 
    // TL72-F3K6-AC9H-5Z1Q

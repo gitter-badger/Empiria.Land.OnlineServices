@@ -7,7 +7,7 @@
                     <label for="generalRequest.certificateType" class="middle">¿Qué tipo de certificado solicita?</label>
                 </div>
                 <div class="small-7 columns">
-                    <select [(ngModel)]="generalRequest.certificateType" class="k-dropdownlist">
+                    <select [(ngModel)]="certificateRequest.certificateType"class="" >
                         <option value="">(Tipo de Certificado)</option>
                         <option value="1">Propiedad</option>
                         <option value="2">Inscripción</option>
@@ -20,7 +20,7 @@
                     <label for="generalRequest.requestedBy" class="middle">Nombre completo del solicitante:</label>
                 </div>
                 <div class="small-7 columns">
-                    <input type="text" value=""  [(ngModel)]="generalRequest.requestedBy" placeholder="Nombre Completo">  
+                    <input type="text" value=""  [(ngModel)]="certificateRequest.requestedBy" placeholder="Nombre Completo">  
                 </div>
             </div>
             <div class="row">                
@@ -28,7 +28,7 @@
                     <label for="" class="middle">Folio real del predio:</label>
                 </div>
                 <div class="small-5 columns">
-                    <input type="text" value="" [(ngModel)]="generalRequest.propertyUID" placeholder="Folio real">                        
+                    <input type="text" value="" [(ngModel)]="certificateRequest.realPropertyUID" placeholder="Folio real">                        
                 </div>
                 <div class="small-2 columns">                     
                     <a class="medium success button" (click)="searchProperty()"> Buscar</a><br/>  
