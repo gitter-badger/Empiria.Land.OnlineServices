@@ -7,8 +7,8 @@
 					<label for="pendingNoteRequest.projectedActId" class="middle">Operación Proyectada</label>
 				</div>
 				<div class="small-9 columns">
-					<select  [(ngModel)] ="pendingNoteRequest.projectedActId" class="" (init)="projectedActId[0]">
-					  <option value="">Elije una opción</option>
+					<select  [(ngModel)] ="pendingNoteRequest.projectedActId" class="" (init)="pendingNoteRequest.projectedActId[0]">
+					  <option value="0">Elije una opción</option>
 					  <option value="2203">Compraventa</option>
 					  <option value="2209">Donación de derechos de posesión</option>
 					  <option value="2208">Donación de derechos de propiedad</option>
