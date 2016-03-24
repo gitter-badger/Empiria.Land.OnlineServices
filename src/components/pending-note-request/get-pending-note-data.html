@@ -1,68 +1,66 @@
 <h1 class="row">Avisos Preventivos</h1>
 <div class="row">
-	<div class="columns medium-9">
-		<form>
-			<div class="row">
-				<div class="small-3 columns">
-					<label for="pendingNoteRequest.projectedActId" class="middle">Operación Proyectada</label>
-				</div>
-				<div class="small-9 columns">
-					<select  [(ngModel)] ="pendingNoteRequest.projectedActId" class="" (init)="pendingNoteRequest.projectedActId[0]">
-					  <option value="0">Elije una opción</option>
-					  <option value="2203">Compraventa</option>
-					  <option value="2209">Donación de derechos de posesión</option>
-					  <option value="2208">Donación de derechos de propiedad</option>
-					  <option value="2787">Lotificación</option>
-					  <option value="2207">Cesión de derechos de posesión</option>
-					  <option value="2206">Cesión de derechos de propiedad</option>
-					  <option value="2371">Denuncia de Erección de Construcción</option>
-					  <option value="2335">Segregación o división de fracciones</option>
-					  <option value="2214">Permuta</option>
-					</select>
-				</div>
-			</div>
-			<div class="row">
-				<div class="small-3 columns">
-					<label for="pendingNoteRequest.requestedBy" class="middle">Otorgado por</label>
-				</div>
-				<div class="small-9 columns">
-					<input type="text"  value=""  [(ngModel)]="pendingNoteRequest.requestedBy" placeholder="Otorgado por:"/>
-				</div>
-			</div>
-			<div class="row">
-				<div class="small-3 columns">
-					<label for="pendingNoteRequest.projectedOwner" class="middle">A favor de:</label>
-				</div>
-				<div class="small-9 columns">
-					<input type="text"  value="" [(ngModel)]="pendingNoteRequest.projectedOwner" placeholder="A favor de:"/>
-				</div>
-			</div>
-			<div class="row">
-				<div class="small-3 columns">
-					<label for="pendingNoteRequest.realPropertyUID" class="middle">Folio real del predio:</label>
-				</div>
-				<div class="small-7 columns">
-					<input type="text" value=""  [(ngModel)]="pendingNoteRequest.realPropertyUID" placeholder="Folio real"/>
-				</div>
-				<div class="small-2 columns">
-					<a class="medium success button" (click)="searchProperty()"> Buscar</a><br/>
-				</div>
+  <div class="columns medium-9">
+    <form>
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="pendingNoteRequest.projectedActId" class="middle">Operación Proyectada</label>
+        </div>
+        <div class="small-9 columns">
+          <select [(ngModel)]="pendingNoteRequest.projectedActId" class="" (init)="pendingNoteRequest.projectedActId[0]">
+            <option value="0">Elije una opción</option>
+            <option value="2203">Compraventa</option>
+            <option value="2209">Donación de derechos de posesión</option>
+            <option value="2208">Donación de derechos de propiedad</option>
+            <option value="2787">Lotificación</option>
+            <option value="2207">Cesión de derechos de posesión</option>
+            <option value="2206">Cesión de derechos de propiedad</option>
+            <option value="2371">Denuncia de Erección de Construcción</option>
+            <option value="2335">Segregación o división de fracciones</option>
+            <option value="2214">Permuta</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="pendingNoteRequest.requestedBy" class="middle">Otorgado por</label>
+        </div>
+        <div class="small-9 columns">
+          <input type="text" value="" [(ngModel)]="pendingNoteRequest.requestedBy" placeholder="Otorgado por:" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="pendingNoteRequest.projectedOwner" class="middle">A favor de:</label>
+        </div>
+        <div class="small-9 columns">
+          <input type="text" value="" [(ngModel)]="pendingNoteRequest.projectedOwner" placeholder="A favor de:" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="pendingNoteRequest.realPropertyUID" class="middle">Folio real del predio:</label>
+        </div>
+        <div class="small-7 columns">
+          <input type="text" value="" [(ngModel)]="pendingNoteRequest.realPropertyUID" placeholder="Folio real" />
+        </div>
+        <div class="small-2 columns">
+          <a class="medium success button" (click)="searchProperty()"> Buscar</a>
+          <br/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-4 columns">
+          <input type="reset" class="medium secondary button" value="Borrar información">
+        </div>
+        <div class="large-4 columns">
 
-			</div>
-
-			<div class="row">
-				<div class="large-4 columns">
-					<input type="reset" class="medium secondary button" value="Borrar información">
-				</div>
-				<div class="large-4 columns">
-					<!--<a class="medium success button" (click)="createPreliminaryNotice()">Siguiente (Pago)</a>     -->
-				</div>
-				<div class="large-4 columns">
-					<a class="medium success button" (click)="createPreliminaryNotice()">Siguiente (Pago)</a>
-				</div>
-			</div>
-
-		</form>
-	</div>
+        </div>
+        <div class="large-4 columns">
+          <a class="medium success button" (click)="createPreliminaryNotice()">Siguiente (Pago)</a>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 <message-box></message-box>

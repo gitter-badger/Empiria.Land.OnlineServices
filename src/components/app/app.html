@@ -1,5 +1,4 @@
-<section class="">
-  
+<section class=""> 
     <div class="row">
 		<div class="two columns">
 		  <button md-button alt="Home" class="md-icon-button"><i class="" md-icon>menu</i></button>
@@ -8,26 +7,28 @@
 		  <h1 flex>Servicios en línea</h1>
 		</div>
 	</div>
-	<div class="row">
-		<div class="two columns"> 
-			<button md-button>Página de inicio</button>
+	<div class="columns medium-9">
+		<div class="row">
+			<div class="two columns"> 
+				<button md-button>Página de inicio</button>
+			</div>
+			<div class="two columns">
+				<button md-button>Registrarse</button>
+			</div>
+			<div class="two columns">
+				<button md-button>Iniciar sesión</button>
+			</div>
+			<div class="two columns">
+				<button md-button [routerLink]="['/PendingNoteRequest']">Avisos Preventivos</button>
+			</div>
+			<div class="two columns">
+				<button md-button [routerLink]="['/CertificateRequest']">Certificados</button>
+			</div>
+			<div class="two columns"> 
+				<button md-button [routerLink]="['/PaymentRequest']">Pago</button>
+			</div>
 		</div>
-		<div class="two columns">
-			<button md-button>Registrarse</button>
-		</div>
-		<div class="two columns">
-			<button md-button>Iniciar sesión</button>
-		</div>
-		<div class="two columns">
-			<button md-button [routerLink]="['/PendingNoteRequest']">Avisos Preventivos</button>
-		</div>
-		<div class="two columns">
-			<button md-button [routerLink]="['/CertificateRequest']">Certificados</button>
-		</div>
-		<div class="two columns"> 
-			<button md-button [routerLink]="['/PaymentRequest']">Pago</button>
-		</div>
-    </div>
+	</div>
 
   <md-content layout="column" layout-align="center center">
     <router-outlet></router-outlet>
