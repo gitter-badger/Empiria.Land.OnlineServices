@@ -51,7 +51,7 @@ export class GetCertificateDataCmp {
     }
 
     private validateProperty(propertyUID: string): boolean {
-        if (!Validate.notNull(propertyUID)) {
+        if (!Validate.hasValue(propertyUID)) {
             this.messageBox.showMessage('Requiero se proporcione el folio real del predio.');
             return false;
         }
@@ -64,12 +64,12 @@ export class GetCertificateDataCmp {
     }
 
     private validateCertificateRequest(): boolean {
-        if (!Validate.notNull(this.certificateRequest.certificateType.toString())) {
+        if (!Validate.hasValue(this.certificateRequest.certificateType.toString())) {
             this.messageBox.showMessage("Requiero se seleccione de la lista el tipo " +
                                         "de certificado que se solicita.");
             return false;
         }
-        if (!Validate.notNull(this.certificateRequest.requestedBy)) {
+        if (!Validate.hasValue(this.certificateRequest.requestedBy)) {
             this.messageBox.showMessage("Necesito conocer el nombre del solicitante.");
             return false;
         }

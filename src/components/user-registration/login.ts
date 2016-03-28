@@ -14,7 +14,6 @@ import {userRegistrationMasterPageCmp} from '../user-registration/userRegistrati
 export class LoginCmp {
 
   public passwordType = 'password';
-  public passwordLabel: string = "Contraseña:";
   public login = Login.newLogin();
   public title: string = "Acceso a usuarios Registrados";
   public subTitle: string = "Bienvenidos. ";
@@ -36,7 +35,7 @@ export class LoginCmp {
       this.messageBox.showMessage("Requiero el correo electrónico en formato alguien@ejemplo.com");
       return false;
     }
-     if (!Validate.notNull(this.login.password)) {
+     if (!Validate.hasValue(this.login.password)) {
       this.messageBox.showMessage("Requiero la contraseña ");
       return false;
     }

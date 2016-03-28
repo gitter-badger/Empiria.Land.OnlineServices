@@ -1,14 +1,21 @@
 export class Validate {
 
-  public static notNull(value: string): boolean {
+  public static hasValue(value: string): boolean {
     if ((value === null) || (value === undefined) || (value.length === 0)) {
       return false;
     }
     return true;
   }
 
+    public static notNull(value: string): boolean {
+    if ((value === null) || (value === undefined)) {
+      return false;
+    }
+    return true;
+  }
+
   public static isEmail(value: string): boolean {
-    if (!this.notNull(value)) {
+    if (!this.hasValue(value)) {
         return false;
     }
     let emailExp: string = '^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$';

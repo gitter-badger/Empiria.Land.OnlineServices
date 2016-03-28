@@ -3,28 +3,28 @@ import {Component, EventEmitter} from 'angular2/core';
 @Component({
   selector: 'secret-text-box',
   templateUrl: './components/windows/secret-text-box.html',
-  inputs: ['secretTextBoxlabel'],
-  outputs: ['secretTextBoxChange']
+  inputs: ['label'],
+  outputs: ['changed']
 })
 export class SecretTextBox {
 
-  public secretBoxType = 'password';
-  public showSecretLabel = 'Mostrar';
-  public secretTextBoxlabel: string = "";
-  public secretTextBoxChange = new EventEmitter();
+  public boxType = 'password';
+  public showHideLabel = 'Mostrar';
+  public label: string = "";
+  public changed = new EventEmitter();
 
    public showSecretText(): void {
-    if (this.secretBoxType === 'password') {
-      this.secretBoxType = 'text';
-      this.showSecretLabel = 'Ocultar';
+    if (this.boxType === 'password') {
+      this.boxType = 'text';
+      this.showHideLabel = 'Ocultar';
     } else {
-      this.secretBoxType = 'password';
-      this.showSecretLabel = 'Mostrar';
+      this.boxType = 'password';
+      this.showHideLabel = 'Mostrar';
     }
   }
 
   onChange(value: string) {
-    this.secretTextBoxChange.emit(value);
+    this.changed.emit(value);
   }
 
 }

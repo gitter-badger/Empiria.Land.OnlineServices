@@ -10,7 +10,7 @@
       <input type="email" [(ngModel)]="login.email" placeholder="Correo electrónico">
     </div>
   </div>
-  <secret-text-box [secretTextBoxlabel]="passwordLabel" (secretTextBoxChange)="login.password=$event"></secret-text-box>
+  <secret-text-box [label]="'Contraseña:'" (changed)="login.password=$event"></secret-text-box>
   <div class="row">
     <div class="small-6 columns">
       <a class="medium success button float-right" (click)="doLogin();">Ingresar al sitio </a>

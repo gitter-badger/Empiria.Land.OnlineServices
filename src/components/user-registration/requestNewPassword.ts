@@ -20,7 +20,7 @@ export class RequestNewPasswordCmp {
 
   public sendConfirmation(): void {
     try {
-      if (!this.validateInputs()) {
+      if (!this.validateForm()) {
         return;
       }
       this.messageBox.showMessage("Se le enviará un correo electronico, con las instrucciones para " +
@@ -30,7 +30,7 @@ export class RequestNewPasswordCmp {
     }
   }
 
-  private validateInputs(): boolean {
+  private validateForm(): boolean {
      if (!Validate.isEmail(this.email)) {
       this.messageBox.showMessage("Requiero el correo electrónico en formato alguien@ejemplo.com");
       return false;

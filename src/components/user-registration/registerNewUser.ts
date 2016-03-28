@@ -19,7 +19,7 @@ export class RegisterNewUserCmp {
 
   public sendConfirmation(): void {
     try {
-      if (!this.validateInputs()) {
+      if (!this.validateForm()) {
         return;
       }
       this.messageBox.showMessage("Se le enviará un correo electronico con las instrucciones " +
@@ -29,7 +29,7 @@ export class RegisterNewUserCmp {
     }
   }
 
-  private validateInputs(): boolean {
+  private validateForm(): boolean {
     if (!Validate.isEmail(this.email)) {
       this.messageBox.showMessage("Requiero el correo electrónico en formato alguien@ejemplo.com");
       return false;
