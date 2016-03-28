@@ -1,7 +1,7 @@
 import {Component, ViewChild} from 'angular2/core';
 import {OnlineServices, CertificateRequest, OnlineTransaction} from 'empiria-land/online.services';
 import {MessageBox} from '../windows/message-box';
-import {Validate} from '../validate/generalValidate';
+import {Validate} from '../temporal-library/validate';
 
 @Component({
   selector: 'get-certificate-data',
@@ -51,7 +51,7 @@ export class GetCertificateDataCmp {
     }
 
     private validateProperty(propertyUID: string): boolean {
-        if (!Validate.hasValue(propertyUID)) {
+        if (!Validate.notNull(propertyUID)) {
             this.messageBox.showMessage('Requiero se proporcione el folio real del predio.');
             return false;
         }
@@ -64,12 +64,12 @@ export class GetCertificateDataCmp {
     }
 
     private validateCertificateRequest(): boolean {
-        if (!Validate.hasValue(this.certificateRequest.certificateType.toString())) {
+        if (!Validate.notNull(this.certificateRequest.certificateType.toString())) {
             this.messageBox.showMessage("Requiero se seleccione de la lista el tipo " +
                                         "de certificado que se solicita.");
             return false;
         }
-        if (!Validate.hasValue(this.certificateRequest.requestedBy)) {
+        if (!Validate.notNull(this.certificateRequest.requestedBy)) {
             this.messageBox.showMessage("Necesito conocer el nombre del solicitante.");
             return false;
         }

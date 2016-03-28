@@ -3,6 +3,10 @@ import { RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 
 import {GetPendingNoteDataCmp} from '../pending-note-request/getPendingNoteData';
 import {GetCertificateDataCmp} from '../certificate-request/getCertificateData';
+import {RegisterNewUserCmp} from '../user-registration/RegisterNewUser';
+import {RegisterNewPasswordCmp} from '../user-registration/RegisterNewPassword';
+import {LoginCmp} from '../user-registration/login';
+import {RequestNewPasswordCmp} from '../user-registration/requestNewPassword';
 
 @Component({
   selector: 'app',
@@ -14,6 +18,10 @@ import {GetCertificateDataCmp} from '../certificate-request/getCertificateData';
 })
 @RouteConfig([
   { path: '/pending-note-request', component: GetPendingNoteDataCmp, as: 'PendingNoteRequest' },
-  { path: '/certificate-request', component: GetCertificateDataCmp, as: 'CertificateRequest' }
+  { path: '/certificate-request', component: GetCertificateDataCmp, as: 'CertificateRequest' },
+  { path: '/register-new-user', component: RegisterNewUserCmp, as: 'RegisterNewUser' },
+  { path: '/register-new-password', component: RegisterNewPasswordCmp, as: 'RegisterNewPassword' },
+  { path: '/login', component: LoginCmp, as: 'Login' },
+  { path: '/request-new-password', component: RequestNewPasswordCmp, as: 'RequestNewPassword'}
 ])
 export class AppCmp {}

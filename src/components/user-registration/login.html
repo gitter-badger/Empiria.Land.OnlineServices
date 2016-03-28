@@ -1,0 +1,26 @@
+<master-page [title]="title" [subTitle]="subTitle">
+<br>
+<h6 class="row">Favor de ingresar la cuenta de correo electrónico y contraseña registradas</h6>
+<form>
+  <div class="row">
+    <div class="small-2 columns">
+      <label class="middle">Correo electrónico: </label>
+    </div>
+    <div class="small-4 columns">
+      <input type="email" [(ngModel)]="login.email" placeholder="Correo electrónico">
+    </div>
+  </div>
+  <secret-text-box [secretTextBoxlabel]="passwordLabel" (secretTextBoxChange)="login.password=$event"></secret-text-box>
+  <div class="row">
+    <div class="small-6 columns">
+      <a class="medium success button float-right" (click)="doLogin();">Ingresar al sitio </a>
+    </div>
+  </div>
+</form>
+<p class="row"><a href="http://www.ontica.org/land/">No recuerdo la contraseña</a></p>
+<p class="row"><a href="http://www.ontica.org/land/">No tengo cuenta. Quiero registrarme como un nuevo usuario </a></p>
+<br>
+<br>
+<p class="row"><a href="http://www.ontica.org/land/">Texto sobre politica de protección de datos personales</a></p>
+<message-box></message-box>
+</master-page>
