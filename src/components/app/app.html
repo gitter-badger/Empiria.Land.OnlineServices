@@ -1,22 +1,22 @@
 <section class="">
-  
+
     <div class="row">
 		<div class="two columns">
 		  <button md-button alt="Home" class="md-icon-button"><i class="" md-icon>menu</i></button>
 		</div>
-		<div class="ten columns">
+		<div class="seven columns">
 		  <h1 flex>Servicios en línea</h1>
 		</div>
 	</div>
 	<div class="row">
-		<div class="two columns"> 
-			<button md-button>Página de inicio</button>
+		<div class="two columns">
+			<button md-button [routerLink]="['/RequestNewPassword']">Página de inicio</button>
 		</div>
 		<div class="two columns">
-			<button md-button>Registrarse</button>
+			<button md-button [routerLink]="['/RegisterNewUser']">Registrarse</button>
 		</div>
 		<div class="two columns">
-			<button md-button>Iniciar sesión</button>
+			<button md-button [routerLink]="['/Login']">Iniciar sesión</button>
 		</div>
 		<div class="two columns">
 			<button md-button [routerLink]="['/PendingNoteRequest']">Avisos Preventivos</button>
@@ -24,8 +24,8 @@
 		<div class="two columns">
 			<button md-button [routerLink]="['/CertificateRequest']">Certificados</button>
 		</div>
-		<div class="two columns"> 
-			<button md-button>Otro</button>
+		<div class="two columns">
+			<button md-button [routerLink]="['/RegisterNewPassword']">Otro</button>
 		</div>
     </div>
 

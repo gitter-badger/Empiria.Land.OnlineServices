@@ -1,7 +1,7 @@
 import {Component, ViewChild} from 'angular2/core';
 import {OnlineServices, CertificateRequest, OnlineTransaction} from 'empiria-land/online.services';
 import {MessageBox} from '../windows/message-box';
-import {Validate} from '../validate/generalValidate';
+import {Validate} from '../temporal-library/validate';
 
 @Component({
   selector: 'get-certificate-data',
