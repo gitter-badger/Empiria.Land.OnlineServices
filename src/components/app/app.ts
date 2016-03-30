@@ -7,6 +7,7 @@ import {RegisterNewUserCmp} from '../user-registration/RegisterNewUser';
 import {RegisterNewPasswordCmp} from '../user-registration/RegisterNewPassword';
 import {LoginCmp} from '../user-registration/login';
 import {RequestNewPasswordCmp} from '../user-registration/requestNewPassword';
+import {GetPaymentDataCmp} from '../payment-request/getPaymentData';
 
 @Component({
   selector: 'app',
@@ -22,6 +23,7 @@ import {RequestNewPasswordCmp} from '../user-registration/requestNewPassword';
   { path: '/register-new-user', component: RegisterNewUserCmp, as: 'RegisterNewUser' },
   { path: '/register-new-password', component: RegisterNewPasswordCmp, as: 'RegisterNewPassword' },
   { path: '/login', component: LoginCmp, as: 'Login' },
-  { path: '/request-new-password', component: RequestNewPasswordCmp, as: 'RequestNewPassword'}
+  { path: '/request-new-password', component: RequestNewPasswordCmp, as: 'RequestNewPassword'},
+  { path: '/payment-request', component: GetPaymentDataCmp, as: 'PaymentRequest' }
 ])
 export class AppCmp {}

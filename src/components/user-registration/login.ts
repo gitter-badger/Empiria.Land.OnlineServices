@@ -3,14 +3,13 @@ import {MessageBox} from '../windows/message-box';
 import {Validate} from '../temporal-library/validate';
 import {Login} from '../temporal-library/login';
 import {SecretTextBox} from '../windows/secretTextBox';
-import {userRegistrationMasterPageCmp} from '../user-registration/userRegistrationMasterPage';
+import {UserRegistrationMasterPageCmp} from '../user-registration/userRegistrationMasterPage';
 
 @Component({
   selector: 'login-form',
   templateUrl: './components/user-registration/login.html',
-  directives: [MessageBox, SecretTextBox, userRegistrationMasterPageCmp]
+  directives: [MessageBox, SecretTextBox, UserRegistrationMasterPageCmp]
 })
-
 export class LoginCmp {
 
   public passwordType = 'password';

@@ -1,0 +1,221 @@
+<h1 class="row">Pago de derechos del trámite</h1>
+<div class="row">
+  <div class="columns medium-9">
+    <div class="row">
+      <table style="width:100%">
+        <tr>
+          <td>Emisión de Certificados:</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Tipo de Certificado:</td>
+          <td>Libertad de Gravamen</td>
+        </tr>
+        <tr>
+          <td>Folio Real:</td>
+          <td>TL34-W5G6-K91Z-8R7Q</td>
+        </tr>
+        <tr>
+          <td>Solicitado por:</td>
+          <td>Hilda Jackson Vera</td>
+        </tr>
+      </table>
+    </div>
+    <div class="row">
+      <div class="small-10 columns">
+        <h4 class="float-right">Derechos: </h4>
+      </div>
+      <div class="small-2 columns">
+        <h4 class="float-left"> 146.00</h4>
+      </div>
+    </div>
+
+    <form>
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="paymentMethod" class="middle">Forma de Pago</label>
+        </div>
+        <div class="small-9 columns">
+          <select #payMode [(ngModel)]="paymentMethod" (ngModelChange)="showFields(payMode.value)">
+            <option value="unknown">Elije una opción</option>
+            <option value="card">Tarjeta de crédito o débito</option>
+            <option value="window">Pago en ventanilla bancaria</option>
+            <option value="store">Pago en establecimientos comerciales</option>
+          </select>
+        </div>
+      </div>
+      <div class="row" *ngIf="paymentMethod === 'card'">
+        <div class="small-3 columns">
+          <label for="cardNumber" class="middle">Número de Tarjeta:</label>
+        </div>
+        <div class="small-7 columns">
+          <input type="text" value="" [(ngModel)]="cardNumber" placeholder="Número de Tarjeta:" />
+        </div>
+        <div class="small-2 columns">
+          <label for="" class="middle">(16 digitos)</label>
+        </div>
+      </div>
+      <div class="row" *ngIf="paymentMethod === 'card'">
+        <div class="small-3 columns">
+          <label for="name" class="middle">Nombre:</label>
+        </div>
+        <div class="small-9 columns">
+          <input type="text" value="" [(ngModel)]="name" placeholder="Nombre:" />
+        </div>
+      </div>
+      <div class="row" *ngIf="paymentMethod === 'card'">
+        <div class="large-3 columns">
+          <label for="" class="middle">Fecha de expiración:</label>
+        </div>
+        <div class="small-2 columns">
+          <label for="month" class="middle float-right">Mes:</label>
+        </div>
+        <div class="small-2 columns">
+          <select [(ngModel)]="month">
+            <option value="">Mes</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
+        </div>
+        <div class="small-2 columns">
+          <label for="year" class="middle float-right">Año:</label>
+        </div>
+        <div class="small-3 columns">
+          <select [(ngModel)]="year" (init)="year[0]">
+            <option value="">Año</option>
+            <option value="01">2016</option>
+            <option value="02">2017</option>
+            <option value="03">2018</option>
+            <option value="03">2019</option>
+            <option value="03">2020</option>
+          </select>
+        </div>
+      </div>
+      <div class="row" *ngIf="paymentMethod === 'card'">
+        <div class="large-3 columns">
+          <label for="" class="middle"> </label>
+        </div>
+        <div class="small-5 columns">
+          <label for="validationCode" class="middle float-right">Código de validación: (CVV)</label>
+        </div>
+        <div class="small-2 columns">
+          <input type="text" value="" [(ngModel)]="validationCode" placeholder="" />
+        </div>
+        <div class="small-2 columns">
+          <label for="validationCode" class="middle float-left">(3(4) dígitos)</label>
+        </div>
+      </div>
+      <div class="row" *ngIf="paymentMethod === 'window'">
+        <div class="small-3 columns">
+          <label for="bankName" class="middle">Nombre del banco:</label>
+        </div>
+        <div class="small-9 columns">
+          <select [(ngModel)]="bankName" (init)="bankName[0]">
+            <option value="">Elije un banco</option>
+            <option value="01">BBVA BANCOMER</option>
+            <option value="02">BANAMEX</option>
+            <option value="03">BANORTE</option>
+            <option value="04">SANTANDER</option>
+            <option value="05">HSBC</option>
+            <option value="06">INBURSA-WALLMART</option>
+            <option value="07">SCOTIABANK</option>
+            <option value="08">INTERACCIONES</option>
+            <option value="09">BANCO AZTECA</option>
+            <option value="10">BANREGIO</option>
+            <option value="11">MULTIVA</option>
+            <option value="12">MIFEL</option>
+            <option value="13">COMPARTAMOS</option>
+            <option value="14">AFIRME</option>
+            <option value="15">VE POR MÁS</option>
+            <option value="16">INVEX</option>
+            <option value="17">BANCOPPEL</option>
+            <option value="18">BANCO AHORRO FAMSA</option>
+            <option value="19">BANSI</option>
+            <option value="20">AMERICAN EXPRESS</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row" *ngIf="paymentMethod === 'store'">
+        <div class="small-3 columns">
+          <label for="payPlace" class="middle">Lugar del pago:</label>
+        </div>
+        <div class="small-9 columns">
+          <select [(ngModel)]="payPlace" class="" (init)="payPlace[0]">
+            <option value="">Elije una tienda</option>
+            <option value="01">OXXO</option>
+            <option value="02">WALMART</option>
+            <option value="03">SORIANA</option>
+            <option value="04">AURRERA</option>
+            <option value="05">FARMACIAS GUADALAJARA</option>
+            <option value="06">SUPERAMA</option>
+            <option value="07">SAM'S CLUB</option>
+            <option value="08">FARMACIAS DEL AHORRO</option>
+            <option value="09">CHEDRAUI</option>
+            <option value="10">COMERCIAL MEXICANA</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row" *ngIf="paymentMethod === 'card'">
+        <div class="large-4 columns">
+          <input type="reset" class="medium secondary button" value="Borrar información">
+        </div>
+        <div class="large-4 columns">
+        </div>
+        <div class="large-4 columns">
+          <a class="medium success button" (click)="createPayment()">Realizar Pago</a>
+        </div>
+      </div>
+
+      <div class="row" *ngIf="paymentMethod === 'window'">
+        <div class="large-4 columns">
+          <input type="reset" class="medium secondary button" value="Borrar información">
+        </div>
+        <div class="large-4 columns">
+        </div>
+        <div class="large-4 columns">
+          <a class="medium success button" (click)="createPayment()">Enviarme la linea de captura</a>
+        </div>
+      </div>
+
+      <div class="row" *ngIf="paymentMethod === 'store'">
+        <div class="large-4 columns">
+          <input type="reset" class="medium secondary button" value="Borrar información">
+        </div>
+        <div class="large-4 columns">
+        </div>
+        <div class="large-4 columns">
+          <a class="medium success button" (click)="createPayment()">Enviarme la linea de captura</a>
+        </div>
+      </div>
+
+    </form>
+    <div class="row">
+      <div class="large-1 columns">
+        <h3 class="float-right">I</h3>
+      </div>
+      <div class="large-11 columns">
+        <div class="callout ">
+          <p>Le enviaremos la confirmacion del pago al correo qe nos ha proporcionado <strong>(hjackson@msn.com.mx).</strong>
+            <br>
+            <br> El Trámite se ingresará de inmediato al Registro Público.
+            <br>
+            <br> Nosotros mantendremos la comunicación con usted vía correo electrónico. Si tiene alguna duda, marque sin costo
+            al 123-456-7890</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<message-box></message-box>

@@ -2,22 +2,22 @@ import {Component, ViewChild} from 'angular2/core';
 import {MessageBox} from '../windows/message-box';
 import {Validate} from '../temporal-library/validate';
 import {SecretTextBox} from '../windows/secretTextBox';
-import {userRegistrationMasterPageCmp} from '../user-registration/userRegistrationMasterPage';
+import {UserRegistrationMasterPageCmp} from '../user-registration/userRegistrationMasterPage';
 
 @Component({
   selector: 'add-new-password',
   templateUrl: './components/user-registration/register-new-password.html',
-  directives: [MessageBox, SecretTextBox, userRegistrationMasterPageCmp]
+  directives: [MessageBox, SecretTextBox, UserRegistrationMasterPageCmp]
 })
 
 export class RegisterNewPasswordCmp {
-   @ViewChild(MessageBox) public messageBox: MessageBox;
+  @ViewChild(MessageBox) public messageBox: MessageBox;
   public newPassword: string = "";
   public confirmPassword: string = "";
   public title: string = "Registrar su nueva contraseña";
   public subTitle: string = " Su cuenta de correo electrónico ya quedo registrada. Ahora solo es neceario " +
                 "nos proporcione una contraseña de acceso.";
-  private email: string = "cyanez@ontica.org";
+  public email: string = "cyanez@ontica.org";
 
   public savePassword(): void {
     try {

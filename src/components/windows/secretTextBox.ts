@@ -23,7 +23,7 @@ export class SecretTextBox {
     }
   }
 
-  onChange(value: string) {
+  public onChange(value: string) {
     this.changed.emit(value);
   }
 

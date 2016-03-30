@@ -1,12 +1,9 @@
 export class Login {
 
   public static newLogin(): any {
-    let login: {
-      email: string,
-      password: string
-     } = {
+    let login = {
         email: "",
-         password: ""
+        password: ""
      };
     return login;
   }

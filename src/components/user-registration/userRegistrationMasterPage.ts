@@ -6,6 +6,6 @@ import {Component}  from 'angular2/core';
     inputs: ["title", "subTitle"]
 })
 
-export class userRegistrationMasterPageCmp {
+export class UserRegistrationMasterPageCmp {
 
 }

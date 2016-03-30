@@ -1,12 +1,12 @@
 import {Component, ViewChild} from 'angular2/core';
 import {MessageBox} from '../windows/message-box';
 import {Validate} from '../temporal-library/validate';
-import {userRegistrationMasterPageCmp} from '../user-registration/userRegistrationMasterPage';
+import {UserRegistrationMasterPageCmp} from '../user-registration/userRegistrationMasterPage';
 
 @Component({
   selector: 'register-new-user',
   templateUrl: './components/user-registration/register-new-user.html',
-  directives: [MessageBox, userRegistrationMasterPageCmp]
+  directives: [MessageBox, UserRegistrationMasterPageCmp]
 })
 
 export class RegisterNewUserCmp {
