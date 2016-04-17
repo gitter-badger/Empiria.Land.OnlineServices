@@ -1,0 +1,139 @@
+
+<h1 class="row">Solicitud de inscripción de escrituras públicas</h1>
+
+<div class="row">
+  <div class="columns medium-9">
+
+    <form>
+      <h4 class="row">1) Datos de la escritura pública:</h4>
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="name" class="middle">Notaria:</label>
+        </div>
+        <div class="small-9 columns">
+          <input type="text" value="" [(ngModel)]="notary" placeholder="Notaria:" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="name" class="middle">Notario:</label>
+        </div>
+        <div class="small-9 columns">
+          <input type="text" value="" [(ngModel)]="notaryName" placeholder="Notario:" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-3 columns">
+          <label for="" class="middle">Escritura pública número:</label>
+        </div>
+        <div class="small-2 columns">
+          <input type="text" value="" [(ngModel)]="documentNumber" placeholder="Número:" />
+        </div>
+        <div class="small-1 columns">
+          <label for="month" class="middle">Libro:</label>
+        </div>
+        <div class="small-2 columns">
+          <input type="text" value="" [(ngModel)]="bookNumber" placeholder="Libro:" />
+        </div>
+        <!--
+        <div class="small-1 columns">
+          <label for="date" class="middle">Fecha:</label>
+        </div>
+        <div class="small-3 columns" *ngIf="ctrlViewDate === 'show'">
+          <input type="date"  id="documentDate" name="documentDate" [(ngModel)]="documentDate" (change)="readDate()"/>
+        </div>
+         <div class="small-3 columns" *ngIf="ctrlViewTxt === 'show'">
+          <input type="text" [(ngModel)]="documentDateTxt" (click)="changeHTMLCtrl()"/>
+        </div>
+        -->
+          <date-text-box [label]="'Fecha:'"></date-text-box>
+
+      </div>
+
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="paymentMethod" class="middle">Archivo con la escritura:</label>
+        </div>
+        <div class="small-4 columns">
+          <input type="text" value="" [(ngModel)]="bookNumber" placeholder="Libro:" />
+        </div>
+        <div class="small-5 columns">
+         <input type="file" [(ngModel)]="documentFile" id="documentFile"  />
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="paymentMethod" class="middle">Archivo con los anexos:</label>
+        </div>
+        <div class="small-4 columns">
+          <input type="text" value="" [(ngModel)]="bookNumber" placeholder="Libro:" />
+        </div>
+        <div class="small-5 columns">
+         <input type="file" [(ngModel)]="annexesFile" id="annexesFile"  />
+        </div>
+      </div>
+
+      <div class="row">
+            <div class="large-12 columns">
+              <label>Descripción:</label>
+              <textarea rows=2 [(ngModel)]="documentDescription" placeholder="Descripción"></textarea>
+            </div>
+      </div>
+      <h4 class="row">2) Información del interesado:</h4>
+           <div class="row">
+            <div class="large-12 columns">
+              <label>Nombre competo del interesado:</label>
+              <input type="text" value="" [(ngModel)]="ownerName" placeholder="Nombre interesado:" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-6 columns">
+              <label>Correo electrónico del interesado:</label>
+              <input type="text" value="" [(ngModel)]="ownerEmail" placeholder="e-mail:" />
+            </div>
+             <div class="large-6 columns">
+              <label>Forma de comunicación:</label>
+              <select  [(ngModel)]="comunicationMethod">
+                <option value="">Elije una opción</option>
+                <option value="1">No enviarle información</option>
+                <option value="2">Enviarle sólo el resultado al finalizar el trámite</option>
+                <option value="3">Avisarle al ingresar y finalizar el trámite</option>
+                <option value="4">La misma interacción que con el notario</option>
+              </select>
+            </div>
+          </div>
+
+      <h4 class="row">3) Firma electrónica:</h4>
+      <div class="row">
+        <div class="small-5 columns">
+          <label for="name" class="middle">Firma electrónica del Notario:</label>
+        </div>
+        <div class="small-7 columns">
+          <input type="text" value="" [(ngModel)]="electronicSignature" placeholder="firma electónica:" />
+        </div>
+      </div>
+
+
+
+
+
+
+      <div class="row" >
+        <div class="large-4 columns">
+          <input type="reset" class="medium secondary button" value="Borrar información">
+        </div>
+        <div class="large-2 columns">
+        </div>
+        <div class="large-6 columns">
+          <!--<a class="medium success button" (click)="sendRecordingDocuments()">Enviar la escritura a calificación</a>-->
+          <a class="medium success button" (click)="sendConfirmation()">Enviar la escritura a calificación</a>
+
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+<message-box></message-box>

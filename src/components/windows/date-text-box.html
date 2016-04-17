@@ -1,0 +1,16 @@
+<div class="row">
+
+  <div class="small-4 columns">
+    <label class="middle">{{label}}</label>
+  </div>
+
+  <div class="small-8 columns" *ngIf="ctrlViewDate === 'show'">
+    <input type="{{boxType}}" id="documentDate" name="documentDate" #documentDate (change)="changeDate(documentDate.value);"
+    />
+  </div>
+
+  <div class="small-8 columns" *ngIf="ctrlViewTxt === 'show'">
+    <input type="{{boxType}}" [(ngModel)]="documentDateTxt" (click)="changeHTMLCtrl()" />
+  </div>
+
+</div>
