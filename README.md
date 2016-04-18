@@ -1,5 +1,7 @@
 # Introduction
 
+[![Join the chat at https://gitter.im/Ontica/Empiria.Land.OnlineServices](https://badges.gitter.im/Ontica/Empiria.Land.OnlineServices.svg)](https://gitter.im/Ontica/Empiria.Land.OnlineServices?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Empiria Land Online Services is an e-government solution for Land Recording Offices, that
 offers public services and transactions to citizens and notaries. Some of these services are:
 land certificates emission, requests of documents copies and deeds registration, electronic
