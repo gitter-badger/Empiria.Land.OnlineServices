@@ -1,0 +1,106 @@
+<h1 class="row">Servicio de envio de copias de documentos</h1>
+<br>
+<br>
+<form >
+ <div class="row">
+    <div class="small-3 columns">
+      <label clas="middle">¿Qué se desea obtener? </label>
+    </div>
+    <div class="small-5 columns">
+      <select [(ngModel)]="validateRequestType"  #validateItem  (ngModelChange)="showSelection(validateItem.value)">
+        <option value="unknown">(Selecciona una opción...)</option>
+        <option value="ticket">Boleta de trámite</option>
+        <option value="certificate">Certificado</option>
+        <option value="document">Documento electrónico</option>
+      </select>
+     </div>
+ </div>
+ <div  *ngIf="validateRequestType === 'ticket' " >
+   <div class="row">
+    <div class="small-3 columns">
+      <label class="middle">Boleta de Tramite: </label>
+    </div>
+    <div class="small-5 columns">
+      <input type="text" placeholder="TL3JEMPL023T-N" maxlength="14"
+       [(ngModel)]="transactionKey" [validate-text]="item" value="{{transactionKey | uppercase}}" autofocus>
+    </div>
+    </div>
+    <div class="row">
+      <div class="small-3 columns">
+        <label class="middle">Enviar a la cuenta: </label>
+      </div>
+      <div class="small-5 columns">
+        <input type="email" placeholder="ejemplo@mail.com.mx" [(ngModel)]="email" >
+      </div>
+    </div>
+    <div class="row">
+   <div class="small-3 columns">
+     <p class="row"><a href="http://www.ontica.org/land/">Deseo usar otra cuenta</a></p>
+   </div>
+   <div class="small-5 columns">
+     <a class="medium success button float-right" (click)="sendDocument()" >Enviar Boleta</a>
+   </div>
+ </div>
+ </div>
+ <div  *ngIf="validateRequestType === 'certificate' " >
+   <div class="row">
+    <div class="small-3 columns">
+      <label class="middle">Numero de Certificado: </label>
+    </div>
+    <div class="small-5 columns">
+     <input type="text" placeholder="CEJ3MP-L01XMU-E5TR42" maxlength="20"
+      [(ngModel)]="transactionKey" [validate-text]="item" value="{{transactionKey | uppercase}}" autofocus>
+
+    </div>
+    </div>
+     <div class="row">
+      <div class="small-3 columns">
+        <label class="middle">Enviar a la cuenta: </label>
+      </div>
+      <div class="small-5 columns">
+        <input type="email" placeholder="ejemplo@mail.com.mx" [(ngModel)]="email" >
+      </div>
+    </div>
+    <div class="row">
+   <div class="small-3 columns">
+     <p class="row"><a href="http://www.ontica.org/land/">Deseo usar otra cuenta</a></p>
+   </div>
+   <div class="small-5 columns">
+     <a class="medium success button float-right" (click)="sendDocument()" >Enviar Certificado</a>
+   </div>
+ </div>
+ </div>
+ <div  *ngIf="validateRequestType === 'document' " >
+   <div class="row">
+    <div class="small-3 columns">
+      <label class="middle">Documento electrónico: </label>
+    </div>
+    <div class="small-5 columns">
+     <input type="text" placeholder="RPEJEM-PLO011-RB58N3" maxlength="20"
+      [(ngModel)]="transactionKey" [validate-text]="item" value="{{transactionKey | uppercase}}" autofocus>
+    </div>
+   </div>
+    <div class="row">
+      <div class="small-3 columns">
+        <label class="middle">Enviar a la cuenta: </label>
+      </div>
+      <div class="small-5 columns">
+        <input type="email" placeholder="ejemplo@mail.com.mx" [(ngModel)]="email" >
+      </div>
+    </div>
+   <div class="row">
+   <div class="small-3 columns">
+     <p class="row"><a href="http://www.ontica.org/land/">Deseo usar otra cuenta</a></p>
+   </div>
+   <div class="small-5 columns">
+     <a class="medium success button float-right" (click)="sendDocument()" >Enviar Documento</a>
+   </div>
+ </div>
+ </div>
+
+</form>
+<div class="row">
+  <p>El sistema le enviará un correo electrónico a la cuenta de correo con una copia.</p>
+</div>
+<message-box></message-box>
+

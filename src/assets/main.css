@@ -1,3 +1,11 @@
 body {
   max-width: 100%
 }
+
+.errorTextBoxBar {
+  border-right: solid;
+  border-right-width: 8px;
+  border-right-color: darkred;
+  background-color: darkgoldenrod;
+}
+

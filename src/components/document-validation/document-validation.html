@@ -1,0 +1,124 @@
+<h1 class="row">Servicio de Validacion de documentos</h1>
+<br>
+<br>
+<form >
+ <div class="row">
+    <div class="small-3 columns">
+      <label clas="middle">¿Qué se desea validar? </label>
+    </div>
+    <div class="small-5 columns">
+      <select [(ngModel)]="validateRequestType"  #validateItem  (ngModelChange)="showSelection(validateItem.value)">
+        <option value="unknown">(Selecciona una opción...)</option>
+        <option value="ticket">Boleta de trámite</option>
+        <option value="certificate">Certificado</option>
+        <option value="document">Documento electrónico</option>
+      </select>
+     </div>
+ </div>
+ <div  *ngIf="validateRequestType === 'ticket' " >
+   <div class="row">
+    <div class="small-3 columns">
+      <label class="middle">Boleta de Tramite: </label>
+    </div>
+    <div class="small-5 columns">
+      <input type="text" placeholder="TL3JEMPL023T-N" maxlength="14"
+       [(ngModel)]="transactionKey" [validate-text]="item" value="{{transactionKey | uppercase}}" autofocus>
+    </div>
+    </div>
+    <div class="row">
+   <div class="small-3 columns">
+     <p class="row"><a href="http://www.ontica.org/land/">¿Dónde lo encuentro?</a></p>
+   </div>
+   <div class="small-5 columns">
+     <a class="medium success button float-right" (click)="documentValidation()" >Validar Boleta</a>
+   </div>
+ </div>
+ </div>
+ <div  *ngIf="validateRequestType === 'certificate' " >
+   <div class="row">
+    <div class="small-3 columns">
+      <label class="middle">Numero de Certificado: </label>
+    </div>
+    <div class="small-5 columns">
+     <input type="text" placeholder="CEJ3MP-L01XMU-E5TR42" maxlength="20"
+      [(ngModel)]="transactionKey" [validate-text]="item" value="{{transactionKey | uppercase}}" autofocus>
+
+    </div>
+    </div>
+    <div class="row">
+   <div class="small-3 columns">
+     <p class="row"><a href="http://www.ontica.org/land/">¿Dónde lo encuentro?</a></p>
+   </div>
+   <div class="small-5 columns">
+     <a class="medium success button float-right" (click)="documentValidation()" >Validar Certificado</a>
+   </div>
+ </div>
+ </div>
+ <div  *ngIf="validateRequestType === 'document' " >
+   <div class="row">
+    <div class="small-3 columns">
+      <label class="middle">Documento electrónico: </label>
+    </div>
+    <div class="small-5 columns">
+     <input type="text" placeholder="RPEJEM-PLO011-RB58N3" maxlength="20"
+      [(ngModel)]="transactionKey" [validate-text]="item" value="{{transactionKey | uppercase}}" autofocus>
+    </div>
+    </div>
+    <div class="row">
+   <div class="small-3 columns">
+     <p class="row"><a href="http://www.ontica.org/land/">¿Dónde lo encuentro?</a></p>
+   </div>
+   <div class="small-5 columns">
+     <a class="medium success button float-right" (click)="documentValidation()" >Validar Documento</a>
+   </div>
+ </div>
+ </div>
+ <div [hidden]="existTransaction">
+ <div class="row" >
+    <div class="large-1 columns">
+      <h3 class="float-right">I</h3>
+    </div>
+    <div class="large-11 columns">
+        <div class="callout ">
+          <p>Si tenemos registrado un "certificado" con ese número.
+            <br>
+            <br> A continuación presentamos la cadena original y el sello digital
+            <br> los cuales deben coincidir con los de su certificado impreso.
+        </div>
+      </div>
+ </div>
+<div class="row">
+    <div class="large-12 columns">
+      <label><strong> Cadena Original: </strong>
+        <textarea placeholder="small-12.columns" disabled [(ngModel)]="originalChain"></textarea>
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <label> <strong>Sello digital: </strong>
+        <textarea placeholder="small-12.columns" disabled [(ngModel)]="digitalStamp"></textarea>
+      </label>
+    </div>
+  </div>
+ </div>
+ <div [hidden]="noExistTransaction">
+   <div class="row">
+    <div class="large-1 columns">
+      <h3 class="float-right">I</h3>
+    </div>
+    <div class="large-11 columns">
+        <div class="callout ">
+          <p>Lo sentimos, no temos registrado ningún "certificado" con ese número.
+            <br>
+            <br>
+            Favor de revisar la información propporcionada.  <a class="medium success button" (click)="tryAgain()" >Intentar nuevamente</a>
+        </div>
+    </div>
+    </div>
+ </div>
+</form>
+<div class="row">
+  <p>Si tiene alguna duda por favor llámanos al <strong>123-456-6789</strong></p>
+</div>
+<message-box></message-box>
